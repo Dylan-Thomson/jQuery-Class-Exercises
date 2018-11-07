@@ -37,11 +37,19 @@
     // 2. Create a for loop that creates HTML content of all the drinks using JavaScript.
     // HINT: You will need to use each of the following methods: createElement, textContent, appendChild
     // ...
-    for(var i = 0; i < drinkList.length; i++) {
+
+    
+    // for(var i = 0; i < drinkList.length; i++) {
+    //   var newP = document.createElement("p");
+    //   newP.textContent = drinkList[i];
+    //   drinkOptions.appendChild(newP);
+    // }
+    
+    drinkList.forEach(function(drink) {
       var newP = document.createElement("p");
-      newP.textContent = drinkList[i];
+      newP.textContent = drink;
       drinkOptions.appendChild(newP);
-    }
+    });
 
     // ...
 
