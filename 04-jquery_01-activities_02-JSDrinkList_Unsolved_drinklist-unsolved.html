@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>JavaScript Content!</title>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -38,17 +42,21 @@
     // HINT: You will need to use each of the following methods: createElement, textContent, appendChild
     // ...
 
-    
+
     // for(var i = 0; i < drinkList.length; i++) {
     //   var newP = document.createElement("p");
     //   newP.textContent = drinkList[i];
     //   drinkOptions.appendChild(newP);
     // }
     
-    drinkList.forEach(function(drink) {
-      var newP = document.createElement("p");
-      newP.textContent = drink;
-      drinkOptions.appendChild(newP);
+    // drinkList.forEach(function(drink) {
+    //   var newP = document.createElement("p");
+    //   newP.textContent = drink;
+    //   drinkOptions.appendChild(newP);
+    // });
+
+    $.each(drinkList, function(i, drink) {
+      $("#drink-options").append("<p>" + drink + "</p>");
     });
 
     // ...
