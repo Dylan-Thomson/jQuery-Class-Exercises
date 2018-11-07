@@ -50,8 +50,10 @@
       $("#random-button").on("click", function() {
         var winningNumber = [];
         for(var i = 0; i < 9; i++) {
+          // Generate random number from 0-9 and push to array
           winningNumber.push(Math.floor(Math.random() * 10));
         }
+        // Add a new div for the new number, use join to convert array to string
         $("#random-number").prepend("<div>" + winningNumber.join("") + "</div>");
       });
     });
