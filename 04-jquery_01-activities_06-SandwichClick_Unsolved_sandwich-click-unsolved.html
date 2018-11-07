@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Trigger Clicked</title>
+
+  <!-- Added link to the jQuery Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+  <h1>Click to Eat Sandwich</h1>
+  <h3 id="pbj">Peanut Butter Jelly</h3>
+  <h3 id="grilledcheese">Grilled Cheese</h3>
+  <h3 id="roastbeef">Roast Beef</h3>
+  <div id="image-div"></div>
+
+  <script type="text/javascript">
+
+    // This document.ready isn't necessary in this example... but is needed in cases where the HTML is complex.
+    // This code makes sure that the JavaScript doesn't get run until the HTML is finished loading
+    // It's useful to become familiar with now.
+
+    $(document).ready(function() {
+
+      // VARIABLES
+      // ====================================================================
+      // Here we create variables for tracking the number of sandwiches eaten
+      // ...
+      var pbjEaten = 0, grilledcheeseEaten = 0, roastbeefEaten = 0;
+
+
+      // ...
+
+      // FUNCTIONS
+      // ====================================================================
+      // Here we create various on "click" functions which capture the clicks
+      // Inside each click event is the code to create an alert, update the counter, then show the updated count.
+      // ...
+      $("#pbj").on("click", function() {
+        pbjEaten++;
+        alert("Peanut butter jelly time!");
+        alert("You've eaten " + pbjEaten + " peanut butter and jelly sandwiches.");
+        $("#image-div").html("<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Peanut-Butter-Jelly-Sandwich.png/1200px-Peanut-Butter-Jelly-Sandwich.png\">");
+      });
+
+      $("#grilledcheese").on("click", function() {
+        grilledcheeseEaten++;
+        alert("It ain't easy being cheesy!");
+        alert("You've eaten " + grilledcheeseEaten + " grilled cheese sandwiches.");
+        $("#image-div").html("<img src=\"https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/grilled-cheese-horizontal-jpg-1522266016.jpg?crop=1.00xw:0.753xh;0,0.105xh&resize=1200:*\">");
+      });
+
+      $("#roastbeef").on("click", function() {
+        roastbeefEaten++;
+        alert("Mmmmm beefy!");
+        alert("You've eaten " + roastbeefEaten + " roast beef sandwiches.");
+        $("#image-div").html("<img src=\"https://www.cscassets.com/recipes/wide_cknew/wide_25336.jpg\">");
+      });
+
+      // ...
+
+    });
+
+</script>
+
+</body>
+
+</html>
