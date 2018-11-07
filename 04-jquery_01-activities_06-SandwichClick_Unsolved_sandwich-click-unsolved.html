@@ -24,6 +24,8 @@
     // This code makes sure that the JavaScript doesn't get run until the HTML is finished loading
     // It's useful to become familiar with now.
 
+
+
     $(document).ready(function() {
 
       // VARIABLES
@@ -32,7 +34,26 @@
       // ...
       var pbjEaten = 0, grilledcheeseEaten = 0, roastbeefEaten = 0;
 
+      var pbj = {
+        name: "peanut butter and jelly",
+        snark: "Peanut butter jelly time!",
+        eaten: 0,
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Peanut-Butter-Jelly-Sandwich.png/1200px-Peanut-Butter-Jelly-Sandwich.png"
+      }
 
+      var roastbeef = {
+        name: "roast beef",
+        snark: "Mmmm beefy!",
+        eaten: 0,
+        image: "https://www.cscassets.com/recipes/wide_cknew/wide_25336.jpg"
+      }
+      
+      var grilledcheese = {
+        name: "grilled cheese",
+        snark: "It ain't easy being cheesy!",
+        eaten: 0,
+        image: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/grilled-cheese-horizontal-jpg-1522266016.jpg?crop=1.00xw:0.753xh;0,0.105xh&resize=1200:*"
+      }
       // ...
 
       // FUNCTIONS
@@ -40,25 +61,24 @@
       // Here we create various on "click" functions which capture the clicks
       // Inside each click event is the code to create an alert, update the counter, then show the updated count.
       // ...
+
+      function eatSandwich(sandwich) {
+        sandwich.eaten++;
+        alert(sandwich.snark);
+        alert("You've eaten " + sandwich.eaten + " " + sandwich.name + " sandwiches.");
+        $("#image-div").html("<img src=\"" + sandwich.image + "\">");
+      }
+
       $("#pbj").on("click", function() {
-        pbjEaten++;
-        alert("Peanut butter jelly time!");
-        alert("You've eaten " + pbjEaten + " peanut butter and jelly sandwiches.");
-        $("#image-div").html("<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Peanut-Butter-Jelly-Sandwich.png/1200px-Peanut-Butter-Jelly-Sandwich.png\">");
+        eatSandwich(pbj);
       });
 
       $("#grilledcheese").on("click", function() {
-        grilledcheeseEaten++;
-        alert("It ain't easy being cheesy!");
-        alert("You've eaten " + grilledcheeseEaten + " grilled cheese sandwiches.");
-        $("#image-div").html("<img src=\"https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/grilled-cheese-horizontal-jpg-1522266016.jpg?crop=1.00xw:0.753xh;0,0.105xh&resize=1200:*\">");
+        eatSandwich(grilledcheese);
       });
 
       $("#roastbeef").on("click", function() {
-        roastbeefEaten++;
-        alert("Mmmmm beefy!");
-        alert("You've eaten " + roastbeefEaten + " roast beef sandwiches.");
-        $("#image-div").html("<img src=\"https://www.cscassets.com/recipes/wide_cknew/wide_25336.jpg\">");
+        eatSandwich(roastbeef);
       });
 
       // ...
